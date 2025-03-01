@@ -1,75 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Simple Contact Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        textarea {
-            min-height: 100px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
+        body { font-family: Arial; max-width: 500px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, textarea { width: 100%; padding: 8px; }
+        button { padding: 10px 15px; background: #4CAF50; color: white; border: none; }
     </style>
 </head>
 <body>
-    <h1>Contact Form</h1>
+    <h2>Contact Form</h2>
     
-    <!-- Note the method="POST" attribute is explicitly set -->
+    <!-- This is the absolute minimum required for FormSubmit to work -->
     <form action="https://formsubmit.co/mihajlo.rajnjak@gmail.com" method="POST">
         <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <label>Name</label>
+            <input type="text" name="name" required>
         </div>
         <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label>Email</label>
+            <input type="email" name="email" required>
         </div>
         <div class="form-group">
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="_subject" value="New form submission" required>
+            <label>Message</label>
+            <textarea name="message" rows="5" required></textarea>
         </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        
-        <!-- Optional FormSubmit settings -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        
-        <button type="submit">Send Message</button>
+        <button type="submit">Send</button>
     </form>
 </body>
 </html>
